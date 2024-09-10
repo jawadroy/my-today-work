@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainwater Harvesting Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: black; /* Teal */
+            color: #fff;
+            padding: 0.5rem 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            font-size: 18px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover,
+        .dropdown-menu li a:hover {
+            background-color: #004d40; /* Darker teal */
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #004d40; /* Teal */
+            list-style: none;
+            padding: 0;
+            min-width: 180px;
+        }
+
+        .dropdown-menu li a {
+            padding: 0.5rem 1rem;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+       
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding-top: 4rem; /* Adjusted for fixed navbar */
+            background-color: #f5f5f5; /* Light gray */
+            color: #333; /* Dark text */
+        }
+
+        header {
+            background: #00796b; /* Teal */
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        header .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-left: 1rem;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 2rem 1rem;
+        }
+
+        main .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #fff; /* White background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .info-section h2 {
+            margin-top: 0;
+            font-size: 1.75rem;
+            color: #004d40; /* Teal */
+        }
+
+        .info-section p,
+        .info-section ul {
+            color: #333; /* Dark text */
+        }
+
+        .info-section ul {
+            list-style: disc;
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .info-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .info-card {
+            flex: 1;
+            min-width: 250px;
+            background: #e0f2f1; /* Light teal */
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: #00796b; /* Dark teal */
+        }
+
+        footer {
+            background: black; /* Teal */
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        footer .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                display: none; /* Hidden by default on mobile */
+                width: 100%;
+                background-color: #004d40; /* Teal */
+            }
+
+            .navbar-toggler {
+                display: block;
+            }
+
+            .navbar-toggler.active + .nav-links {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .info-cards {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .info-card {
+                padding: 0.75rem;
+            }
+
+            .info-card h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Brand</a>
+            <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="Rain harvesting website (1).html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Harvesting</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Residential.html">Residential</a></li>
+                        <li><a href="commercial.html">Commercial</a></li>
+                    </ul>
+                </li>
+                <li><a href="category.html">Category</a></li>
+                <li><a href="#">Method</a></li>
+                <li><a href="#">How to Use</a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="commercial" class="info-section">
+            <div class="container">
+                <h2>Commercial Rainwater Harvesting</h2>
+                <p>In commercial areas, rainwater harvesting can be more complex due to the scale and the diverse applications of the harvested water. Implementing an effective system can lead to significant cost savings and sustainability benefits.</p>
+                <ul>
+                    <li>Systems: Large-scale collection systems, underground storage tanks, advanced filtration systems, and distribution networks.</li>
+                    <li>Benefits: Cost savings on water, potential to meet sustainability goals, and can be used for irrigation, cooling systems, and toilet flushing.</li>
+                </ul>
+                
+                <div class="info-cards">
+                    <div class="info-card">
+                        <h3>Collection Systems</h3>
+                        <p>Large commercial buildings often use extensive roof catchment areas to collect rainwater. This includes designing large gutters and downspouts to handle high volumes of water. Modern systems can integrate sensors to monitor water flow and optimize collection efficiency.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Storage Solutions</h3>
+                        <p>Commercial systems use large underground tanks or cisterns for water storage. These tanks are designed to accommodate the water needs of the building and ensure a reliable supply. Some systems include advanced monitoring technologies to track water levels and quality.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Filtration Systems</h3>
+                        <p>Advanced filtration systems remove debris, sediments, and contaminants. This may include multi-stage filtration setups, including pre-filters and activated carbon filters. Some systems use ultraviolet (UV) treatment to ensure water is safe for non-potable uses.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Distribution Networks</h3>
+                        <p>Water distribution networks include pumps, valves, and pipes that channel harvested rainwater to various parts of the building, ensuring efficient use. Some networks are equipped with smart controls to optimize water usage and reduce waste.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Advanced Technologies</h3>
+                        <p>Modern commercial rainwater harvesting systems often incorporate advanced technologies such as Internet of Things (IoT) sensors, automated controls, and data analytics to improve system performance and management.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Case Studies</h3>
+                        <p>Several commercial buildings worldwide have successfully implemented rainwater harvesting systems. For instance, the Sydney Olympic Park uses a sophisticated system to collect and reuse rainwater, significantly reducing its reliance on potable water.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rainwater Harvesting. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navbar-toggler').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

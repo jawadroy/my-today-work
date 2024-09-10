@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Case Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Toggle Case Converter</h1>
+        <textarea id="inputText" rows="4" placeholder="Enter text here..."></textarea>
+        <button onclick="toggleCase()">Toggle Case</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function toggleCase() {
+            const inputText = document.getElementById('inputText').value;
+            let toggledText = '';
+
+            for (let char of inputText) {
+                if (char === char.toUpperCase()) {
+                    // If character is uppercase, convert to lowercase
+                    toggledText += char.toLowerCase();
+                } else {
+                    // If character is lowercase, convert to uppercase
+                    toggledText += char.toUpperCase();
+                }
+            }
+
+            document.getElementById('result').innerText = toggledText;
+        }
+    </script>
+</body>
+</html>

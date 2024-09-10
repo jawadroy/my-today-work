@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Grid Layout</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            grid-gap: 15px; /* Space between items */
+            padding: 10px; /* Adjust padding as needed */
+        }
+
+        .grid-item {
+            display: flex;
+            flex-direction: column; 
+            background-color: #f9f9f9; /* Background color for visibility */
+            border: 1px solid #ddd; /* Border for better visibility */
+            border-radius: 8px; /* Rounded corners */
+            aspect-ratio: 1 / 1; /* Square aspect ratio */
+            position: relative; /* Relative positioning for text */
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Crop the image to fit the container */
+            object-position: center; /* Center the image */
+        }
+
+        .grid-item .image-name {
+            padding: 10px; /* Padding around the name */
+            text-align: center; /* Center text */
+            background-color: #fff; /* Background color for text */
+            width: 100%; /* Full width */
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .text-container {
+            text-align: center; /* Center the text */
+            padding: 20px; /* Add padding around the text */
+            background-color: #f0f0f0; /* Optional: Background color for better visibility */
+            margin-top: 20px; /* Space between the grid and the text */
+        }
+
+        .text-container p {
+            margin: 0; /* Remove default margin */
+            font-size: 18px; /* Adjust font size as needed */
+            color: #333; /* Text color */
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?t=st=1723296168~exp=1723299768~hmac=2210314a286e61c402087b4b642fe545b9f1cc6ea857efab8506461aaa61e24b&w=826" alt="image1">
+            <div class="image-name">Flower 1</div>
+        </div>
+        <div class="grid-item">
+            <img src="https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg?t=st=1723296168~exp=1723299768~hmac=2210314a286e61c402087b4b642fe545b9f1cc6ea857efab8506461aaa61e24b&w=826" alt="image2">
+            <div class="image-name">Flower 2</div>
+        </div>
+        <div class="grid-item">
+            <img src="https://img.freepik.com/free-vector/gradient-particle-wave-background_23-2150517312.jpg?t=st=1723296240~exp=1723299840~hmac=19b9ed0803df113810f8c92c6c436060bc41c1392950d3ccfeabca724e49a20e&w=740" alt="image3">
+            <div class="image-name">Flower 3</div>
+        </div>
+        <div class="grid-item">
+            <img src="https://img.freepik.com/free-photo/flat-lay-beautiful-autumn-leaves-with-copy-space_23-2148769090.jpg?t=st=1723296053~exp=1723299653~hmac=8202692a99ade95625505f655560d948a4458a5c2f0b56d3ea08ef6c404c568b&w=740" alt="image4">
+            <div class="image-name">Flower 4</div>
+        </div>
+        <div class="grid-item">
+            <img src="https://img.freepik.com/premium-photo/smoke-collection-black-background_44272-2749.jpg?w=740" alt="image5">
+            <div class="image-name">Flower 5</div>
+        </div>
+        <div class="grid-item">
+            <img src="https://img.freepik.com/premium-photo/green-red-elm-tree-leaves-black-background_1218049-3998.jpg?w=740" alt="image6">
+            <div class="image-name">Flower 6</div>
+        </div>
+        <div class="grid-item">
+            <img src="https://img.freepik.com/free-vector/realistic-neon-lights-background_23-2148907367.jpg?t=st=1723296307~exp=1723299907~hmac=39d09cd2e641f887cf5ba0d3dfd1b429fff2f79e62e141647c7bce65c83ae634&w=740" alt="image7">
+            <div class="image-name">Flower 7</div>
+        </div>
+        <div class="grid-item">
+            <img src="https://img.freepik.com/free-vector/gradient-particle-wave-background_23-2150517309.jpg?t=st=1723296567~exp=1723300167~hmac=11d6d70a6f9ee0a2ae8c2a2cef3ce6f9dc286dda19a11645b7c75e44220acce4&w=740" alt="image8">
+            <div class="image-name">Flower 8</div>
+        </div>
+
+    </div>
+    <br>
+        <br>
+        <br>
+        <br>
+    <div class="text-container">
+        <p>Your descriptive text or caption goes here. This is where you can provide additional information about the images above.</p>
+    </div>
+</body>
+</html>

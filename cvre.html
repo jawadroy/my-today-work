@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainwater Harvesting for Residential Areas</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            display: block;
+        }
+
+        .nav-links a:hover,
+        .dropdown-menu li a:hover {
+            background-color: #555;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            list-style: none;
+            padding: 0;
+            min-width: 180px; 
+        }
+
+        .dropdown-menu li a {
+            padding: 0.5rem 1rem;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 4rem; /* Adjusted for fixed navbar */
+        }
+
+        .section {
+            padding: 20px;
+            background: #fff;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        .section h2 {
+            color: #00796b;
+            border-bottom: 2px solid #00796b;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .section ul li, .section ol li {
+            margin-bottom: 10px;
+        }
+
+        .section a {
+            color: #00796b;
+            text-decoration: none;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #00796b;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Grid Styles */
+        .grid-section {
+            padding: 20px;
+            background: #fff;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .grid-item {
+            background: #f4f4f4;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .grid-item h3 {
+            padding: 10px;
+            margin: 0;
+            color: #00796b;
+        }
+
+        .grid-item p {
+            padding: 0 10px 10px 10px;
+            margin: 0;
+            color: #555;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar-toggler {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #333;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Brand</a>
+            <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="Rain harvesting website (1).html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Harvesting</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Residential.html">Residential</a></li>
+                        <li><a href="commercial.html">Commercial</a></li>
+                    </ul>
+                </li>
+                <li><a href="category.html">Category</a></li>
+                <li><a href="#">Method</a></li>
+                <li><a href="#">How to Use</a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+  
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rainwater Harvesting. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for navbar toggle
+        document.getElementById('navbar-toggler').addEventListener('click', function() {
+            var navLinks = document.getElementById('nav-links');
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            } else {
+                navLinks.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainwater Harvesting for Residential Areas</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            display: block;
+        }
+
+        .nav-links a:hover,
+        .dropdown-menu li a:hover {
+            background-color: #555;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            list-style: none;
+            padding: 0;
+            min-width: 180px; 
+        }
+
+        .dropdown-menu li a {
+            padding: 0.5rem 1rem;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 4rem; /* Adjusted for fixed navbar */
+        }
+
+        .section {
+            padding: 20px;
+            background: #fff;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        .section h2 {
+            color: #00796b;
+            border-bottom: 2px solid #00796b;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .section ul li, .section ol li {
+            margin-bottom: 10px;
+        }
+
+        .section a {
+            color: #00796b;
+            text-decoration: none;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Grid Styles */
+        .grid-section {
+            padding: 20px;
+            background: #fff;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .grid-item {
+            background: #f4f4f4;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .grid-item h3 {
+            padding: 10px;
+            margin: 0;
+            color: #00796b;
+        }
+
+        .grid-item p {
+            padding: 0 10px 10px 10px;
+            margin: 0;
+            color: #555;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar-toggler {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #333;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">Brand</a>
+        <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation">
+            ☰
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="Rain_harvesting_website.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Harvesting</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Residential.html">Residential</a></li>
+                    <li><a href="Commercial.html">Commercial</a></li>
+                </ul>
+            </li>
+            <li><a href="Category.html">Category</a></li>
+            <li><a href="#">Method</a></li>
+            <li><a href="#">How to Use</a></li>
+            <li><a href="#">Development</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="section">
+            <h2>Introduction to Rainwater Harvesting</h2>
+            <p>Rainwater harvesting is the practice of collecting and storing rainwater for later use. It is a sustainable and eco-friendly method to manage water resources, particularly beneficial for residential areas where water conservation is crucial. By harvesting rainwater, households can reduce their dependence on municipal water supplies and contribute to environmental conservation.</p>
+        </section>
+
+        <section class="section">
+            <h2>Benefits of Rainwater Harvesting</h2>
+            <ul>
+                <li>Reduces water bills by providing an alternative water source for irrigation and non-potable uses.</li>
+                <li>Decreases the demand on municipal water supply, especially during drought conditions.</li>
+                <li>Minimizes the risk of flooding by controlling stormwater runoff and reducing the burden on drainage systems.</li>
+                <li>Provides a reliable source of water for garden irrigation, reducing the need for treated water.</li>
+                <li>Improves groundwater recharge and maintains local hydrological balance, contributing to overall ecosystem health.</li>
+                <li>Can be used for various purposes, including flushing toilets, washing cars, and even for drinking water if properly filtered.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>How to Install a Rainwater Harvesting System</h2>
+            <ol>
+                <li><strong>Assess Your Needs:</strong> Calculate the volume of rainwater you need based on your household's water consumption and the local rainfall patterns.</li>
+                <li><strong>Choose a Collection Area:</strong> Install gutters and downspouts on your roof to collect rainwater. Ensure that the collection area is clean and free from debris.</li>
+                <li><strong>Select a Storage Tank:</strong> Choose a tank that meets your needs in terms of capacity and space. Tanks can be made from various materials such as plastic, concrete, or metal.</li>
+                <li><strong>Install Filtration Systems:</strong> Equip your system with filters to remove leaves, dirt, and other contaminants from the rainwater before it enters the storage tank.</li>
+                <li><strong>Connect Plumbing:</strong> Install plumbing to direct the harvested rainwater from the tank to the intended usage areas. This may include connecting to irrigation systems or indoor plumbing.</li>
+                <li><strong>Test the System:</strong> Once installed, test the system to ensure that all components are working correctly and make any necessary adjustments or repairs.</li>
+                <li><strong>Consider Legal and Health Regulations:</strong> Check local regulations regarding rainwater harvesting and ensure that your system complies with health and safety standards.</li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>Maintenance Tips</h2>
+            <ul>
+                <li>Regularly clean gutters, downspouts, and filters to prevent clogging and ensure efficient water collection.</li>
+                <li>Inspect the storage tank for leaks, cracks, or signs of wear and tear. Repair or replace damaged components as needed.</li>
+                <li>Monitor
+
+
+
+
+
+
+
+/* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            display: block;
+        }
+
+        .nav-links a:hover,
+        .dropdown-menu li a:hover {
+            background-color: #555;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            list-style: none;
+            padding: 0;
+            min-width: 180px; 
+        }
+
+        .dropdown-menu li a {
+            padding: 0.5rem 1rem;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 4rem; /* Adjusted for fixed navbar */
+        }
+
+        .section {
+            padding: 20px;
+            background: #fff;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        .section h2 {
+            color: #00796b;
+            border-bottom: 2px solid #00796b;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .section ul, .section ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .section ul li, .section ol li {
+            margin-bottom: 10px;
+        }
+
+        .section a {
+            color: #00796b;
+            text-decoration: none;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Grid Styles */
+        .grid-section {
+            padding: 20px;
+            background: #fff;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .grid-item {
+            background: #f4f4f4;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .grid-item h3 {
+            padding: 10px;
+            margin: 0;
+            color: #00796b;
+        }
+
+        .grid-item p {
+            padding: 0 10px 10px 10px;
+            margin: 0;
+            color: #555;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar-toggler {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #333;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }

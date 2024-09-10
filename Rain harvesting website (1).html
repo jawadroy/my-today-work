@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            display: block;
+        }
+
+        .nav-links a:hover,
+        .dropdown-menu li a:hover {
+            background-color: #555;
+        }
+
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            list-style: none;
+            padding: 0;
+            min-width: 180px; 
+        }
+
+        .dropdown-menu li a {
+            padding: 0.5rem 1rem;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Toggler Styles */
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .navbar-toggler-icon::before {
+            content: "\2630"; 
+        }
+
+        /* Home Section Styles */
+        .home-section {
+            padding: 3rem 1rem;
+            background-image: url('https://img.freepik.com/premium-photo/petrichor-rising-from-rainkissed-earth_875722-25914.jpg?w=826');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #fff;
+            min-height: 100vh; /* Ensure minimum full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 60px; /* Adjust for fixed navbar height */
+        }
+
+        .home-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            max-width: 80%;
+        }
+
+        .home-section p {
+            color: white;
+            text-align: center;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative; /* Remove fixed position */
+            width: 100%;
+            margin-top: auto; /* Push to bottom */
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .navbar-toggler {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px; /* Adjust for fixed navbar height */
+                left: 0;
+                background-color: #333;
+                padding: 2rem 1rem;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow for dropdown */
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .dropdown-menu {
+                position: static;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                display: none;
+            }
+
+            .dropdown .dropdown-toggle:focus + .dropdown-menu,
+            .dropdown .dropdown-toggle:hover + .dropdown-menu {
+                display: block;
+            }
+
+            .home-section {
+                padding-top: 120px; /* Adjust for fixed navbar height */
+            }
+
+            .home-section h1 {
+                font-size: 2rem;
+                max-width: 100%;
+            }
+
+            .home-section p {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+        }
+
+        /* Improved Styles for Accessibility */
+        .navbar-toggler:focus {
+            outline: 2px solid #fff;
+        }
+
+        /* Add a focus state for dropdown links */
+        .dropdown-menu a:focus,
+        .nav-links a:focus {
+            background-color: #555;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Brand</a>
+            <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="Rain harvesting website (1).html">Home</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Harvesting</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Residential.html">Residential</a></li>
+                        <li><a href="commercial.html">Commercial</a></li>
+                    </ul>
+                </li>
+                <li><a href="category.html">Category</a></li>
+                <li><a href="#">Method</a></li>
+                <li><a href="#">How to Use</a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="home-section">
+        <div class="container">
+            <!-- <h1>Welcome to Rainwater Harvesting Techniques</h1>
+            <p>Rainwater harvesting is the collection and storage of rainwater for reuse before it reaches the ground. It's a crucial technique for sustainable water management and offers numerous benefits for both residential and commercial purposes. In this section, we will explore various rainwater harvesting techniques that can be implemented to conserve water and support the environment.</p> -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Brand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggler = document.getElementById('navbar-toggler');
+            const navLinks = document.getElementById('nav-links');
+
+            toggler.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close the dropdown menu when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!navLinks.contains(event.target) && !toggler.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
